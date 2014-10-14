@@ -1,9 +1,11 @@
 FROM dockerfile/chrome
 RUN apt-get update
+
+# Install imagemagick
 RUN apt-get -y install gnome-screenshot xclip imagemagick
 
 # Install basic dev tools
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     build-essential \
     wget \
     curl \
