@@ -39,8 +39,11 @@ RUN gem install bundler --no-rdoc --no-ri
 
 # Add user
 RUN useradd --create-home -s /bin/bash ubuntu ;\
-adduser ubuntu sudo ;\
-echo "ubuntu:ubuntu" | chpasswd;
+    adduser ubuntu sudo ;\
+    echo "ubuntu:ubuntu" | chpasswd;
+
+# Adjust locale & localtime
+RUN mv /etc/localtime{,.org} && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 ADD .vnc /root/.vnc
 ENV USER root
