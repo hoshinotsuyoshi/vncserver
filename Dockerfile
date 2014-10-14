@@ -45,7 +45,7 @@ RUN useradd --create-home -s /bin/bash ubuntu ;\
     echo "ubuntu:ubuntu" | chpasswd;
 
 # Adjust locale & localtime
-RUN mv /etc/localtime{,.org} && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN mv /etc/localtime /etc/localtime.org && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 ADD .vnc /root/.vnc
 ENV USER root
