@@ -49,4 +49,5 @@ RUN mv /etc/localtime /etc/localtime.org && ln -s /usr/share/zoneinfo/Asia/Tokyo
 
 ADD .vnc /root/.vnc
 ENV USER root
+ENV DISPLAY :1
 ADD chrome_data_dir /root/chrome_data_dir
